@@ -6,14 +6,13 @@ O foco está na limpeza de dados, agregação, insights estatísticos e visualiz
 📂 Estrutura do Projeto
 Plaintext
 
-.
-├── dados-precipitacao.csv        # Dataset bruto de precipitação
-├── dados.py                      # Carregamento, limpeza e análise central
-├── grafico_chuva_diaria.py       # Visualização da série temporal diária
-├── grafico_chuva_mensal.py       # Gráfico de chuva acumulada mensal
-├── grafico_chuva_estacacoes.py   # Gráficos de distribuição sazonal
-├── graficos/                     # Gráficos gerados (criados automaticamente)
-└── README.md
+    ├── dados-precipitacao.csv        # Dataset bruto de precipitação
+    ├── dados.py                      # Carregamento, limpeza e análise central
+    ├── grafico_chuva_diaria.py       # Visualização da série temporal diária
+    ├── grafico_chuva_mensal.py       # Gráfico de chuva acumulada mensal
+    ├── grafico_chuva_estacacoes.py   # Gráficos de distribuição sazonal
+    ├── graficos/                     # Gráficos gerados (criados automaticamente)
+    └── README.md
 
 📊 Conjunto de Dados (Dataset)
 
