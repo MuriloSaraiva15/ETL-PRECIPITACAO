@@ -5,6 +5,8 @@ Este projeto realiza uma análise exploratória de dados (EDA) sobre a precipita
 
 Para uma melhor visualização das análises feitas confira aqui [elt_precipitacao.ipynb](./elt_precipitacao.ipynb)
 
+Dados retirados da SIBH - [SP Águas (Sistema de Informações sobre Recursos Hídricos)](https://cth.daee.sp.gov.br/sibh/)
+
 ### Estrutura do Projeto
 ```
 ├── dados-precipitacao.csv        # Dataset bruto
