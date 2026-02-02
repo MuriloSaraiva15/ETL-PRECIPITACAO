@@ -101,4 +101,40 @@ Arquivo gerado: `pizza_estacoes.png`
 
 A análise da precipitação diária mostra uma alta variabilidade ao longo do ano, com muitos dias sem chuva intercalados por eventos concentrados.
 A média considerando apenas os dias chuvosos é significativamente maior que a média geral, indicando que a precipitação ocorre de forma pontual e intensa, e não distribuída uniformemente.
-![chuva diária](/home/murilo/Projetos/ETL PRECIPITACAO/graficos/precipitacao_diaria.png "Chuva Diária ao Longo do Ano")
+![chuva diária](/home/murilo/Projetos/ETL PRECIPITACAO/graficos/precipitacao_diaria.png)
+
+##### 2. Distribuição Mensal da Precipitação
+
+O gráfico mensal evidencia uma desigualdade clara entre os meses, com alguns concentrando grande parte do volume anual.
+Meses acima da média mensal contribuem de forma desproporcional para o total do ano, o que reforça a importância de análises agregadas para planejamento hídrico e urbano.
+![acumulado mensal](/home/murilo/Projetos/ETL PRECIPITACAO/graficos/media_mensal.png)
+
+### 3. Influência das Estações do Ano
+
+A análise por estação mostra que determinadas estações concentram tanto o maior volume total quanto as maiores médias diárias de chuva.
+Isso indica um padrão sazonal bem definido, essencial para estudos climáticos, agricultura, gestão de recursos hídricos e prevenção de eventos extremos.
+![analise estacoes](/home/murilo/Projetos/ETL PRECIPITACAO/graficos/pizza_estacoes.png)
+
+Tecnologias Utilizadas
+- Python 3
+- pandas
+- matplotlib
+- seaborn
+- calendar e locale
+
+### Como Executar
+1. Instalar dependências:
+`pip install pandas matplotlib seaborn`
+2. Executar os scripts:
+`
+python grafico_chuva_diaria.py
+python grafico_chuva_mensal.py
+python grafico_chuva_estacacoes.py
+`
+Os gráficos serão salvos automaticamente.
+
+Objetivo do Projeto
+- Praticar conceitos de **ETL e análise exploratória**
+- Trabalhar com **séries temporais**
+- Produzir **visualizações interpretáveis**
+- Criar um projeto sólido para **portfólio de dados**
