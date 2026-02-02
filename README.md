@@ -3,7 +3,7 @@
 Este projeto realiza uma análise exploratória de dados (EDA) sobre a precipitação diária (em mm) de uma cidade ao longo do ano de 2025, utilizando Python. O foco está em tratamento de dados, agregações temporais e visualização, com geração de gráficos claros e estatísticas relevantes.
 
 ### Estrutura do Projeto
-.
+```
 ├── dados-precipitacao.csv        # Dataset bruto
 ├── dados.py                      # Carga, limpeza e análises principais
 ├── grafico_chuva_diaria.py       # Gráfico de precipitação diária
@@ -11,7 +11,7 @@ Este projeto realiza uma análise exploratória de dados (EDA) sobre a precipita
 ├── grafico_chuva_estacacoes.py   # Gráficos por estação do ano
 ├── graficos/                     # Gráficos gerados automaticamente
 └── README.md
-
+```
 
 ### Dataset
 - Período: Janeiro a Dezembro de 2025
