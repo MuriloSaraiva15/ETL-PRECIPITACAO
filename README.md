@@ -1,7 +1,7 @@
 # **Análise de Precipitação Pluviométrica – 2025**
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![Seaborn](https://img.shields.io/badge/Seaborn-%234470AD.svg?style=for-the-badge&logo=SciPy&logoColor=white)
 
-Este projeto realiza uma análise exploratória de dados (EDA) sobre a precipitação diária (em mm) de uma cidade ao longo do ano de 2025, utilizando Python. O foco está em tratamento de dados, agregações temporais e visualização, com geração de gráficos claros e estatísticas relevantes.
+Este projeto realiza uma análise exploratória de dados (EDA) sobre a precipitação diária (em mm) do bairro Jardim Boa Esperança em Guarujá(SP) ao longo do ano de 2025, utilizando Python. O foco está em tratamento de dados, agregações temporais e visualização, com geração de gráficos claros e estatísticas relevantes.
 
 Para uma melhor visualização das análises feitas confira aqui [elt_precipitacao.ipynb](./elt_precipitacao.ipynb)
 
