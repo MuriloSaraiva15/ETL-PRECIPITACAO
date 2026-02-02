@@ -4,14 +4,15 @@ Este projeto realiza uma análise exploratória de dados (EDA) sobre a precipita
 O foco está em tratamento de dados, agregações temporais e visualização, com geração de gráficos claros e estatísticas relevantes.
 
 ### Estrutura do Projeto
-`├── dados-precipitacao.csv        # Dataset bruto
- ├── dados.py                      # Carga, limpeza e análises principais
- ├── grafico_chuva_diaria.py       # Gráfico de precipitação diária
- ├── grafico_chuva_mensal.py       # Gráfico de precipitação mensal
- ├── grafico_chuva_estacacoes.py   # Gráficos por estação do ano
- ├── graficos/                     # Gráficos gerados automaticamente
- └── README.md`
-
+`
+  ├── dados-precipitacao.csv        # Dataset bruto
+  ├── dados.py                      # Carga, limpeza e análises principais
+  ├── grafico_chuva_diaria.py       # Gráfico de precipitação diária
+  ├── grafico_chuva_mensal.py       # Gráfico de precipitação mensal
+  ├── grafico_chuva_estacacoes.py   # Gráficos por estação do ano
+  ├── graficos/                     # Gráficos gerados automaticamente
+  └── README.md
+`
 ### Dataset
 
 - Período: Janeiro a Dezembro de 2025
