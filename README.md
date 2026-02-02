@@ -1,142 +1,103 @@
-🌧️ Projeto de Análise de Precipitação (2025)
+# **Análise de Precipitação Pluviométrica – 2025**
 
-Este projeto realiza uma análise exploratória de dados (EDA) de precipitação diária de uma cidade ao longo do ano de 2025, utilizando Python.
+Este projeto realiza uma análise exploratória de dados (EDA) sobre a precipitação diária (em mm) de uma cidade ao longo do ano de 2025, utilizando Python.
+O foco está em tratamento de dados, agregações temporais e visualização, com geração de gráficos claros e estatísticas relevantes.
 
-O foco está na limpeza de dados, agregação, insights estatísticos e visualização, gerando tanto resumos numéricos quanto gráficos de alta qualidade. O projeto foi desenvolvido para fins de aprendizado, apresentação de portfólio e reprodutibilidade, seguindo uma separação clara entre os scripts de processamento de dados e de visualização.
-📂 Estrutura do Projeto
-Plaintext
+### Estrutura do Projeto
+`├── dados-precipitacao.csv        # Dataset bruto
+ ├── dados.py                      # Carga, limpeza e análises principais
+ ├── grafico_chuva_diaria.py       # Gráfico de precipitação diária
+ ├── grafico_chuva_mensal.py       # Gráfico de precipitação mensal
+ ├── grafico_chuva_estacacoes.py   # Gráficos por estação do ano
+ ├── graficos/                     # Gráficos gerados automaticamente
+ └── README.md`
 
-    ├── dados-precipitacao.csv        # Dataset bruto de precipitação
-    ├── dados.py                      # Carregamento, limpeza e análise central
-    ├── grafico_chuva_diaria.py       # Visualização da série temporal diária
-    ├── grafico_chuva_mensal.py       # Gráfico de chuva acumulada mensal
-    ├── grafico_chuva_estacacoes.py   # Gráficos de distribuição sazonal
-    ├── graficos/                     # Gráficos gerados (criados automaticamente)
-    └── README.md
+### Dataset
 
-📊 Conjunto de Dados (Dataset)
+- Período: Janeiro a Dezembro de 2025
 
-    Fonte: Medições de uma estação meteorológica
+- Granularidade: diária
 
-    Período: Janeiro–Dezembro de 2025
+- Unidade: milímetros (mm)
 
-    Granularidade: Precipitação diária (mm)
+Colunas utilizadas
 
-Colunas principais utilizadas:
+- Data: data da medição
 
-    Data → Data da medição
+- Valor: volume de chuva em mm
 
-    Valor → Quantidade de chuva em milímetros (mm)
+Colunas irrelevantes e metadados são removidos durante o pré-processamento.
 
-    Colunas de metadados irrelevantes são removidas durante o pré-processamento.
-
-⚙️ Processamento de Dados (dados.py)
+### Processamento dos Dados (dados.py)
 
 O módulo dados.py é responsável por:
 
-    Carregar o arquivo CSV.
+- Leitura do arquivo CSV
 
-    Limpar e formatar os dados.
+- Limpeza e padronização dos dados
 
-    Converter tipos de dados (datas e valores numéricos).
+- Conversão de tipos (datas e valores numéricos)
 
-    Remover colunas não utilizadas.
+- Verificação de dados ausentes e duplicados
 
-    Realizar análise descritiva, incluindo:
+- Cálculo de métricas como:
 
-        Precipitação total anual.
+    - Chuva acumulada anual
 
-        Média diária de chuva.
+    - Média diária de precipitação
 
-        Precipitação apenas em dias chuvosos.
+    - Média considerando apenas dias com chuva
 
-        Contagem de dias com e sem chuva.
+    - Dias com e sem precipitação
 
-        Agregação semanal, mensal e sazonal.
+    - Acumulado semanal, mensal e por estação
 
-        Top 10 dias mais chuvosos e menos chuvosos.
+Dias com maior e menor volume de chuva
 
-O módulo também expõe uma função reutilizável:
-Python
+Também disponibiliza a função reutilizável:
+`carregar_dados()
+Essa função é utilizada em todos os scripts de visualização.
 
-def carregar_dados():
-    ...
+### Visualizações Geradas
 
-Essa função é utilizada por todos os scripts de visualização para garantir a consistência dos dados.
-📈 Visualizações
+Todos os gráficos são salvos automaticamente na pasta `graficos/`.
 
-Todos os gráficos são salvos automaticamente no diretório graficos/.
-1️⃣ Chuva Diária – Série Temporal
+##### 1. Precipitação Diária
+Script: `grafico_chuva_diaria.py`
+- Série temporal diária ao longo do ano
+- Destaque visual para dias com chuva
+- Linhas de referência para:
+    - Média diária geral
+    - Média apenas dos dias chuvosos
+- Eixo temporal organizado por meses
 
-Arquivo: grafico_chuva_diaria.py
+Arquivo gerado: `precipitacao_diaria.png`
 
-    Gráfico de linha da precipitação diária.
+##### 2. Precipitação Mensal
+Script: `grafico_chuva_mensal.py`
+- Gráfico de barras com o acumulado mensal
+- Linha de referência com a média mensal
+- Valores anotados diretamente nas barras
+- Meses formatados conforme o locale pt-BR
 
-    Destaque para os dias com chuva.
+Arquivo gerado: `media_mensal.png`
 
-    Inclui: Média diária geral e média considerando apenas dias chuvosos.
+### 3. Precipitação por Estação do Ano
+Script: `grafico_chuva_estacacoes.py
+- Dois gráficos de pizza:
+    - Total acumulado por estação
+    - Média diária por estação
+- Estações consideradas:
+    - Verão
+    - Outono
+    - Inverno
+    - Primavera
 
-    Marcadores mensais no eixo X.
+Arquivo gerado: `pizza_estacoes.png`
 
-    📌 Saída: precipitacao_diaria.png
+## Conclusões a partir dos Gráficos
+##### 1. Comportamento Diário da Chuva
 
-2️⃣ Acumulado Mensal de Chuva
-
-Arquivo: grafico_chuva_mensal.py
-
-    Gráfico de barras mostrando o total de chuva por mês.
-
-    Exibe os totais mensais e a linha de média mensal geral como referência.
-
-    Nomes dos meses formatados em português.
-
-    📌 Saída: media_mensal.png
-
-3️⃣ Distribuição Sazonal (Estações)
-
-Arquivo: grafico_chuva_estacacoes.py
-
-    Dois gráficos de pizza: Precipitação total por estação e média diária por estação.
-
-    Estações consideradas: Verão, Outono, Inverno e Primavera.
-
-    📌 Saída: pizza_estacoes.png
-
-🧰 Tecnologias Utilizadas
-
-    Python 3
-
-    pandas – manipulação de dados
-
-    matplotlib – plotagem de gráficos
-
-    seaborn – visualizações estatísticas
-
-    calendar / locale – formatação de nomes de meses
-
-▶️ Como Executar
-
-    Instale as dependências:
-    Bash
-
-    pip install pandas matplotlib seaborn
-
-    Execute a análise e as visualizações:
-    Bash
-
-    python grafico_chuva_diaria.py
-    python grafico_chuva_mensal.py
-    python grafico_chuva_estacacoes.py
-
-Todos os gráficos serão salvos automaticamente.
-🎯 Objetivos do Projeto
-
-    Praticar conceitos de ETL com dados reais de séries temporais.
-
-    Aplicar técnicas de agregação e amostragem (resampling) de dados.
-
-    Produzir visualizações claras e prontas para apresentações.
-
-    Construir um projeto de análise de dados sólido para portfólio.
-
-📌 Notas: O projeto separa intencionalmente a lógica de análise da lógica de visualização, tornando os scripts modulares e reutilizáveis. Ideal para portfólios de Analista de Dados Júnior ou Engenharia de Dados.
+A análise da precipitação diária mostra uma alta variabilidade ao longo do ano, com muitos dias sem chuva intercalados por eventos concentrados.
+A média considerando apenas os dias chuvosos é significativamente maior que a média geral, indicando que a precipitação ocorre de forma pontual e intensa, e não distribuída uniformemente.
+![chuva diária](/home/murilo/Projetos/ETL PRECIPITACAO/graficos/precipitacao_diaria.png "Chuva Diária ao Longo do Ano")
