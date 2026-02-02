@@ -26,13 +26,12 @@ print(f'O número de valores duplicados: {df.duplicated().sum()}')
 
 
 
-# Procurando linhas com string vazias'
-print(f'O número de linhas vazias: {df.apply(lambda x: x.astype(str).str.strip() == '').sum()}')
+# Verificando se tem linhas vazias
+print(f"O número de linhas vazias: {df.apply(lambda x: x.astype(str).str.strip() == '').sum().sum()}")
 
 
 
-
-# Dias sem registro
+# Dias sem registros
 dias_registrados = df['Data'].dt.date.nunique()
 total_dias_ano = 365
 dias_faltantes = total_dias_ano - dias_registrados
@@ -55,10 +54,15 @@ print(f'Chuva acumulada no ano de 2025: {chuva_acumulada}mm')
 
 
 
-# Precipitação diária média levando em conta todos os dias registrados
-chuva_por_dia = chuva_acumulada.mean()
+# dias sem chuva
+print(f'Dias sem chuva: {df.Valor[df.Valor == 0].count()}')
 
-print(f'Precipitação média em relação ao total do ano: {(chuva_por_dia / dias_contados).round(2)}mm')
+
+
+# Precipitação diária média levando em conta todos os dias registrados
+media_chuva_por_dia = chuva_acumulada.mean()
+
+print(f'Precipitação média em relação ao total do ano: {(media_chuva_por_dia / dias_contados).round(2)}mm')
 
 
 
@@ -87,11 +91,6 @@ print(f'-----Top 10 dias com menos chuva em 2025-----')
 for index, linha in top_10_menos_chuva.iterrows():
     data_formatada = linha['Data'].strftime('%d/%m/%Y')
     print(f"{data_formatada}: {linha['Valor']}mm")
-
-
-
-# dias sem chuva
-print(f'Dias sem chuva: {df.Valor[df.Valor == 0].count()}')
 
 
 

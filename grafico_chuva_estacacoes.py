@@ -7,7 +7,6 @@ df = carregar_dados()
 df['Data'] = pd.to_datetime(df['Data'])
 df['Valor'] = pd.to_numeric(df['Valor'], errors='coerce').fillna(0)
 
-# --- CÁLCULOS ---
 seasons = {
     'Verão': ('2025-01-01', '2025-03-20'),
     'Outono': ('2025-03-21', '2025-06-20'),
@@ -23,16 +22,13 @@ for nome, (inicio, fim) in seasons.items():
     somas.append(filtro['Valor'].sum())
     medias.append(filtro['Valor'].mean() if not filtro.empty else 0)
 
-# --- FUNÇÃO PARA EXIBIR MM E % ---
 def func_format(pct, allvals):
     absolute = pct/100.*sum(allvals)
     return f"{pct:.1f}%\n({absolute:.1f} mm)"
 
-# --- CONFIGURAÇÃO VISUAL ---
 cores = ['#ffcc5c', '#ff6f61', '#88d8b0', '#92a8d1']
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(18, 8))
 
-# Gráfico 1: Soma Total
 wedges1, texts1, autotexts1 = ax1.pie(
     somas, labels=labels, 
     autopct=lambda pct: func_format(pct, somas),
@@ -40,7 +36,6 @@ wedges1, texts1, autotexts1 = ax1.pie(
 )
 ax1.set_title('Precipitação Total por Estação', fontsize=15, fontweight='bold')
 
-# Gráfico 2: Média Diária
 wedges2, texts2, autotexts2 = ax2.pie(
     medias, labels=labels, 
     autopct=lambda pct: func_format(pct, medias),
@@ -48,13 +43,11 @@ wedges2, texts2, autotexts2 = ax2.pie(
 )
 ax2.set_title('Média Diária por Estação', fontsize=15, fontweight='bold')
 
-# Ajustando a fonte dos valores dentro da pizza para ficarem legíveis
 plt.setp(autotexts1, size=10, weight="bold", color="black")
 plt.setp(autotexts2, size=10, weight="bold", color="black")
 
 plt.tight_layout()
 
-# --- SALVAMENTO ---
 diretorio_atual = os.path.dirname(__file__)
 pasta_destino = os.path.join(diretorio_atual, 'graficos')
 if not os.path.exists(pasta_destino):
